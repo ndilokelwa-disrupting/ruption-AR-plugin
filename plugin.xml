@@ -13,9 +13,9 @@
         The Ruption AR Plugin enables developers to embed an augmented reality view into their Cordova project. You can create a fully featured app with advanced augmented reality features using HTML, CSS and JavaScript.
     </description>
 
-    <repo>https://github.com/ndilokelwa-disrupting/WikitudePlugin.git</repo>
+    <repo>https://github.com/ndilokelwa-disrupting/ruption-AR-plugin.git</repo>
 
-    <license>(c) 2016-2019 Wikitude GmbH - see License.md for details of the license</license>
+    <license>(c) 2021 Ruption Lda - see License for details of the license</license>
     
     
     <engines>
@@ -24,18 +24,18 @@
     </engines>
 
     <!-- copy WikitudePlugin wrapper file into www-folder -->
-    <js-module src="www/WikitudePlugin.js" name="WikitudePlugin">
-        <clobbers target="WikitudePlugin" />
+    <js-module src="www/RuptionARPlugin.js" name="RuptionARPlugin">
+        <clobbers target="RuptionARPlugin" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
 
         <!-- declare implementation of WikitudePlugin -->
-        <source-file src="src/android/WikitudePlugin.java" target-dir="src/com/wikitude/phonegap" />
+        <source-file src="src/android/RuptionARPlugin.java" target-dir="src/com/ruption/ar" />
 
         <!-- copy wikitude sdk -->
-        <lib-file src="src/android/wikitudesdk.aar"/>
+        <lib-file src="src/android/ruptionarsdk.aar"/>
 
         <!-- copy build extras, necessary for wikitude.aar -->
         <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference" />
@@ -60,7 +60,7 @@
         
         <!-- adds MediaPlayerActivity, required for startVideo feature-->
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
-            <activity android:name="com.wikitude.tools.activities.MediaPlayerActivity" android:screenOrientation="landscape">
+            <activity android:name="com.ruption.tools.activities.MediaPlayerActivity" android:screenOrientation="landscape">
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW" />
                     <category android:name="android.intent.category.DEFAULT" />
@@ -71,30 +71,30 @@
 
         <!-- adds WikitudePlugin in project's config.xml -->
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="WikitudePlugin">
-                <param name="android-package" value="com.wikitude.phonegap.WikitudePlugin"/>
+            <feature name="RuptionARPlugin">
+                <param name="android-package" value="com.ruption.ar.RuptionARPlugin"/>
             </feature>
         </config-file>
 
 
         <!-- visible after installation -->
         <info>
-            Have fun using world's first augmented reality plugin for Cordova. Visit https://www.wikitude.com/external/doc/documentation/latest/phonegap/ for detailed documentation for the plugin.
+            Have fun using ruption's augmented reality plugin for Cordova. Visit https://www.ruption.pt/RuptionARPlugin/doc/documentation/ for detailed documentation for the plugin.
             
-            Make sure that you enter your Wikitude SDK trial license key in `WikitudePlugin.js` line 12. If you havent bought a license please visit http://www.wikitude.com/store.
+            Make sure that you enter your Ruption AR SDK trial license key in `RuptionARPlugin.js` line 12. If you havent bought a license please visit http://www.ruption.pt/RuptionARPlugin.
             
-            If you want to contribute to the open source project, please visit us at GitHub, http://github.com/Wikitude
+            If you want to contribute to the open source project, please visit us at GitHub, http://github.com/ndilokelwa-disrupting
         </info>
 
         
 
     </platform>
 
-    <!-- iOS -->
+    <!-- iOS --> <!--
     <platform name="ios">
                 
                 
-        <!-- WikitudePlugin Source -->
+        <!-- WikitudePlugin Source --
         <header-file src="src/ios/WTWikitudePlugin.h" />
         <source-file src="src/ios/WTWikitudePlugin.m" />
 
@@ -104,7 +104,7 @@
         <framework src="src/ios/WikitudeSDK.xcframework" custom="true" embed="true" />
 
 
-        <!-- Additional WikitudePlugin libraries and frameworks -->
+        <!-- Additional WikitudePlugin libraries and frameworks --
         <framework src="Accelerate.framework" />
         <framework src="AssetsLibrary.framework" />
         <framework src="AVFoundation.framework" />
@@ -129,14 +129,14 @@
         <framework src="libz.dylib" />
         
 
-        <!-- Adopts project's config.xml to include the WikitudePlugin and domain white-lists -->
+        <!-- Adopts project's config.xml to include the WikitudePlugin and domain white-lists --
         <config-file target="config.xml" parent="/*">
             <feature name="WikitudePlugin">
                 <param name="ios-package" value="WTWikitudePlugin"/>
             </feature>
         </config-file>
 
-        <!-- visible after installation -->
+        <!-- visible after installation --
         <info>
             Have fun using world's first augmented reality plugin for Cordova. Visit https://www.wikitude.com/external/doc/documentation/latest/phonegap/ for detailed documentation for the plugin.
             
@@ -145,6 +145,6 @@
             If you want to contribute to the open source project, please visit us at GitHub, http://github.com/Wikitude
         </info>
         
-    </platform>    
+    </platform>    -->
     
 </plugin>
